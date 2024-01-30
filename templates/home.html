@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form</title>
+    <!-- these are the min css lines -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- cdnlines -->
+    {% include 'cdnlines.html' %}
+    <style>
+        h1{
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'nav.html' %}
+    {% block content %}
+    <!-- <nav class="navbar navbar-inverse">
+        <div class="container"> -->
+            <!-- Header section -->
+            <!-- <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img src="{% static 'images/amma.jpg' %}" width="90px" height="55px" style="border-radius: 10px;margin-top: -10px">
+                </a>
+            </div> -->
+    
+            <!-- Navigation links -->
+            <!-- <ul class="nav navbar-nav ">
+                <li><a href="#">Details</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul> -->
+    
+            <!-- <ul class="nav navbar-nav navbar-right">
+                <li><a href="login" style="background-color: rgb(183, 236, 236); color: rgb(7, 7, 7); border: 7px solid rgb(35, 34, 34); border-radius: 38px;">Login</a></li>
+                <li><a href="register" style="background-color: rgb(183, 236, 236); color: rgb(7, 7, 7); border: 7px solid rgb(35, 34, 34); border-radius: 38px;">Registration</a></li>
+            </ul>
+        </div>
+    </nav> -->
+
+    <h1 style="text-align: center; color: blue;">welcome to my page</h1>
+    {% endblock %}
+    <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
+    <br> <br><br> <br><br> 
+    <br>
+    
+    {% include 'base.html' %}
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/popper.js"></script>
+</body>
+</html>

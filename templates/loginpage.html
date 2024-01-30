@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    {% include 'cdnlines.html' %}
+   
+</head>
+<body>
+{% include 'nav.html' %}
+    <div class="container" style="margin-left: 570px;">
+        <div class="row mt-3">
+            <div class="col-md-4 mx-auto shadow p-3">
+                <h2 class="mb-3 text-center" style="color: blue;">Login form</h2>
+            {% if errmsg %}
+            <div>
+                {{errmsg}}
+            </div>
+            {% endif %}
+           <form method="post" >
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="input1" class="form-label"><strong>Enter user_name:</strong></label>
+                <input type="email" name="uname" class="form-control" id="input1" required>
+            </div>
+
+            <div class="mb-2">
+                <label for="input2" class="form-label"><strong>Enter password:</strong></label>
+                <input type="password" name="upass" class="form-control" id="input2" required>
+            </div> 
+            <br>
+            <div class="mb-2">
+                <input type="submit" class="btn btn-danger" value="login">&nbsp;if not register??&nbsp;
+                <a href="/register" style="text-decoration: none;">register</a>    
+            </div>
+            {% if success %}
+            <div class="alert alert-success">
+             {{success}}
+            </div>
+            {% endif %}
+            </form>
+            
+        </div>
+        
+    </div>
+
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/popper.js"></script>
+    
+</body>
+</html>

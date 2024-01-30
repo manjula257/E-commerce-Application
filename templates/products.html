@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>place-order</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    {% include 'cdnlines.html' %}
+    <style>
+        div h4{
+            background-color: rgb(254, 59, 59);
+            color: rgb(255, 255, 255);
+            height: 30px;
+            padding-top: 7px;
+            border-radius: 5px;
+        }
+        span{
+            font-weight: bold;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+        {% include 'nav.html' %}
+        {% block content %}
+ 
+        {% for x in products %}
+        <div class="container">
+            <div class="row">
+        
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{x.pimage.url}}" class="card-img-top" width='100%' height="250px" alt="...">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <p class="card-title"><b>Name:</b> {{x.pname}}</p>
+                    <p class="card-text"><b>Cost:</b> {{x.pcost}}</p>
+                    <p class="card-text"><b>Details:</b> {{x.pdetails}}</p>
+                            {% if x.cat == 1 %}
+                        <p class="card-text"><b>Mobile</b></p>
+                        {% elif x.cat == 2 %}
+                        <p class="card-text"><b>clothes</b></p>
+                        {% else %}
+                        <p class="card-text"><b>shoes</b></p>
+                        {% endif %}
+                        <a href="/addtocart/{{x.id}}" class="btn btn-primary">Add to cart</a>
+                        <a href="/viewcart" class="btn btn-primary">View cart</a>
+                        <a href="/home" class="btn btn-primary">Shop more</a>
+                </div>
+        </div>  
+    </div>
+         <br>      
+        {% endfor %}           
+
+        
+
+            <!-- <div class="col-md-4">
+                <span>Product-Name:</span> Shoe<br><br>
+                <span>Category:</span> Shoe<br><br>
+                <span>Price</span> 400<br><br>
+                <span>Details</span> Adidas Shoe<br><br>
+                <a><input type="submit" value="New cart" class="btn btn-danger"></a>
+                <a><input type="submit" value="Add to cart" class="btn btn-danger"></a>
+                <a><input type="submit" value="Shop me" class="btn btn-danger"></a>
+
+            </div> -->
+
+        <br><br><br><br>
+        <br><br><br><br>
+        {% endblock %}
+        {% include 'base.html' %}
+        
+</body>
+</html>

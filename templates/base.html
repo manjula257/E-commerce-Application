@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    {% include 'cdnlines.html' %}
+    <style>
+        footer{
+            margin-top: 10px;
+            background-color:rgb(35, 34, 34);
+            color: rgb(253, 213, 16);
+            width: auto;
+            height: 200px;
+        }
+        a{
+            font-size: 18px;
+            font-family: sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    {% block content %}
+    
+    {% endblock %}
+    <br>
+    <footer> 
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <h3>Address:</h3>
+                <h5>Near Metro, fortune signature, 304, 3rd floor</h5>
+                <h5>Nizampeta X road, Above pista house, JNTUH</h5>
+                <h5> Hyderabad, Telangana 500085.</h5>
+                <!-- <pre>Near Metro, fortune signature, 304, 3rd floor
+                        Nizampeta X road, Above pista house, JNTUH
+                        Hyderabad, Telangana 500085.
+                </pre>  -->
+            </div>
+
+            <div class="col-md-4 text-center">
+                <h3>Quick links</h3>
+                <a href="#">Home</a><br>
+                <a href="#">Contact</a><br>
+                <a href="#">About</a>
+            </div>
+
+            <div class="col-md-4 text-center stickyicon-list" >
+                <h3>Connect us</h3>
+                <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook"></i>&nbsp;Facebook</a>   
+                <br>
+                <a href="https://twitter.com/" target="_blank" ><i class="bi bi-twitter-x"></i>&nbsp;Twitter</a> 
+                <br>
+                <a href="https://www.linkedin.com/" target="_blank" ><i class="bi bi-linkedin"></i>&nbsp;Linkedin</a> 
+                <br>
+                <a href="https://www.instagram.com/" target="_blank" ><i class="bi bi-instagram"></i>&nbsp;Instagram</a> 
+
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/popper.js"></script>
+</body>
+</html>
